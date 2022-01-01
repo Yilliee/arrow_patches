@@ -1,0 +1,30 @@
+From 87b98d4959255d2ace783d453cd79eddd196ccb5 Mon Sep 17 00:00:00 2001
+From: Alberto Ponces <ponces26@gmail.com>
+Date: Wed, 5 Jan 2022 20:29:27 +0500
+Subject: [PATCH 3/3] build: Disable inline kernel building
+
+Change-Id: I4c01aa093474a8017366bd5e98586c58b2cd6452
+---
+ build/tasks/kernel.mk | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/build/tasks/kernel.mk b/build/tasks/kernel.mk
+index d098b91..e4be6e7 100644
+--- a/build/tasks/kernel.mk
++++ b/build/tasks/kernel.mk
+@@ -62,6 +62,7 @@
+ #   NEED_KERNEL_MODULE_VENDOR_OVERLAY  = Optional, if true, install kernel
+ #                                          modules in vendor_overlay instead of vendor
+ 
++ifneq ($(TARGET_NO_KERNEL_OVERRIDE),true)
+ ifneq ($(TARGET_NO_KERNEL),true)
+ 
+ ## Externally influenced variables
+@@ -405,3 +406,4 @@ dtboimage: $(INSTALLED_DTBOIMAGE_TARGET)
+ dtbimage: $(INSTALLED_DTBIMAGE_TARGET)
+ 
+ endif # TARGET_NO_KERNEL
++endif # TARGET_NO_KERNEL_OVERRIDE
+-- 
+2.34.1
+

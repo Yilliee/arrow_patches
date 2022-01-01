@@ -1,0 +1,36 @@
+From a6043b0b30aca0c1b908e6f0ac7a54388915c873 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Yilli=C3=A9?= <yilliee@protonmail.com>
+Date: Mon, 3 Jan 2022 17:04:02 +0500
+Subject: [PATCH 2/3] config : Only enable adb authentication on user builds
+
+---
+ config/props.mk | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/config/props.mk b/config/props.mk
+index d93cab4..11829d4 100644
+--- a/config/props.mk
++++ b/config/props.mk
+@@ -53,13 +53,15 @@ PRODUCT_PRODUCT_PROPERTIES += \
+ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+     net.tethering.noprovisioning=true
+ 
+-ifeq ($(TARGET_BUILD_VARIANT),eng)
+-# Disable ADB authentication
+-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
+-else
++ifeq ($(TARGET_BUILD_VARIANT),user)
+ # Enable ADB authentication
+ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
++else
++# Disable ADB authentication
++PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
++endif
+ 
++ifneq ($(TARGET_BUILD_VARIANT),eng)
+ # Disable extra StrictMode features on all non-engineering builds
+ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.strictmode.disable=true
+ endif
+-- 
+2.34.1
+

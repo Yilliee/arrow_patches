@@ -1,0 +1,33 @@
+From 04a708e72d65530a44d74615c383fb61f3dea6e8 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Yilli=C3=A9?= <yilliee@protonmail.com>
+Date: Sat, 1 Jan 2022 20:03:45 +0500
+Subject: [PATCH] core : Don't enable adb auth : Don't set ro.secure to 1
+
+---
+ core/main.mk | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/core/main.mk b/core/main.mk
+index fcbb043..0c91e12 100644
+--- a/core/main.mk
++++ b/core/main.mk
+@@ -378,12 +378,12 @@ enable_target_debugging := true
+ tags_to_install :=
+ ifneq (,$(user_variant))
+   # Target is secure in user builds.
+-  ADDITIONAL_SYSTEM_PROPERTIES += ro.secure=1
++#  ADDITIONAL_SYSTEM_PROPERTIES += ro.secure=1
+   ADDITIONAL_SYSTEM_PROPERTIES += security.perf_harden=1
+ 
+-  ifeq ($(user_variant),user)
+-    ADDITIONAL_SYSTEM_PROPERTIES += ro.adb.secure=1
+-  endif
++#  ifeq ($(user_variant),user)
++#    ADDITIONAL_SYSTEM_PROPERTIES += ro.adb.secure=1
++#  endif
+ 
+   ifeq ($(user_variant),userdebug)
+     # Pick up some extra useful tools
+-- 
+2.34.1
+
