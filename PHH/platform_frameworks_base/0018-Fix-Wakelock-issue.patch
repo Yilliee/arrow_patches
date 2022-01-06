@@ -1,7 +1,7 @@
-From 8a986cb2316720e6c3115b07f720e49604917a28 Mon Sep 17 00:00:00 2001
+From 8270968a7e1f549bb7cea2434c7d20245cf0cb30 Mon Sep 17 00:00:00 2001
 From: Alberto Ponces <ponces26@gmail.com>
 Date: Tue, 2 Feb 2021 10:20:51 +0000
-Subject: [PATCH 18/25] Fix Wakelock issue
+Subject: [PATCH 18/26] Fix Wakelock issue
 
 Prevent SystemUI crash due to "WakeLock under-locked Doze" (issue #12) by only releasing a wakelock that was not already released
 ---

@@ -51,14 +51,14 @@ done
 #platform_frameworks_base
 DISPLAY_MSG=1
 cp -r ${PHH}/platform_frameworks_base ${SOURCE_DIR}/frameworks/base/phh && cd ${SOURCE_DIR}/frameworks/base
-for i in {0001..0025}
+for i in {0001..0026}
 do apply_patches frameworks/base phh $i
 done
 
 #platform_frameworks_native
 DISPLAY_MSG=1
 cp -r ${PHH}/platform_frameworks_native ${SOURCE_DIR}/frameworks/native/phh && cd ${SOURCE_DIR}/frameworks/native
-for i in {0001..0011}
+for i in {0001..0012}
 do apply_patches frameworks/native phh $i
 done
 
@@ -72,7 +72,7 @@ done
 #platform_frameworks_opt_telephony
 DISPLAY_MSG=1
 cp -r ${PHH}/platform_frameworks_opt_telephony ${SOURCE_DIR}/frameworks/opt/telephony/phh && cd ${SOURCE_DIR}/frameworks/opt/telephony
-for i in {0001..0003}
+for i in {0001..0004}
 do apply_patches frameworks/opt/telephony phh $i
 done
 
