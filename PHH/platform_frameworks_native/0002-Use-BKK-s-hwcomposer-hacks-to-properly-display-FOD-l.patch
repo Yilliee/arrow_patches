@@ -1,7 +1,7 @@
-From 86f8caad722212e05dd03e26dcd9f7043b39f03f Mon Sep 17 00:00:00 2001
+From cee6b266a3387da010d28186b429b6c1cec86090 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Tue, 10 Mar 2020 23:26:55 +0100
-Subject: [PATCH 02/12] Use BKK's hwcomposer hacks to properly display FOD
+Subject: [PATCH 02/13] Use BKK's hwcomposer hacks to properly display FOD
  layers
 
 Insecure hack: Set FOD layers to magical Z values to trigger
