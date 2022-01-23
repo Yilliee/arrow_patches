@@ -62,17 +62,10 @@ for i in {0001..0013}
 do apply_patches frameworks/native phh $i
 done
 
-#platform_frameworks_opt_net_ims
-DISPLAY_MSG=1
-cp -r ${PHH}/platform_frameworks_opt_net_ims ${SOURCE_DIR}/frameworks/opt/net/ims/phh && cd ${SOURCE_DIR}/frameworks/opt/net/ims
-for i in {0001..0001}
-do apply_patches frameworks/opt/net/ims phh $i
-done
-
 #platform_frameworks_opt_telephony
 DISPLAY_MSG=1
 cp -r ${PHH}/platform_frameworks_opt_telephony ${SOURCE_DIR}/frameworks/opt/telephony/phh && cd ${SOURCE_DIR}/frameworks/opt/telephony
-for i in {0001..0004}
+for i in {0001..0003}
 do apply_patches frameworks/opt/telephony phh $i
 done
 

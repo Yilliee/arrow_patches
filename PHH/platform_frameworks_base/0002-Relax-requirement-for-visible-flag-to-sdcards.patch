@@ -1,4 +1,4 @@
-From 06d02951902e13907478bb53786a2a3e94863dee Mon Sep 17 00:00:00 2001
+From ee96b94850d3d11b53a3d41c51f28cf2b9cf8548 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Tue, 28 Nov 2017 18:28:04 +0100
 Subject: [PATCH 02/26] Relax requirement for visible flag to sdcards

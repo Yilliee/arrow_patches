@@ -1,4 +1,4 @@
-From 01280b441f684ffedc8fa4b2e788c48d02d91475 Mon Sep 17 00:00:00 2001
+From 2ab5d71c6b9dc69ea61ffed68037aa033a278cfc Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 19 Dec 2021 17:08:22 -0500
 Subject: [PATCH 24/26] Add UDFPS support for various devices
@@ -13,11 +13,11 @@ Successfully tested on Galaxy A51, Xiaomi Mi 9, and OnePlus Nord 2
 Change-Id: I9448f06a46c178652f5b216717d914b8db55c993
 ---
  packages/SystemUI/res/values/arrow_config.xml |   4 +-
- .../systemui/biometrics/UdfpsView.java        |  58 +++-
+ .../systemui/biometrics/UdfpsView.java        |  53 ++++
  services/core/Android.bp                      |   4 +
  .../server/biometrics/AuthService.java        | 262 +++++++++++++++++-
  .../sensors/fingerprint/UdfpsHelper.java      | 115 +++++++-
- 5 files changed, 423 insertions(+), 20 deletions(-)
+ 5 files changed, 420 insertions(+), 18 deletions(-)
 
 diff --git a/packages/SystemUI/res/values/arrow_config.xml b/packages/SystemUI/res/values/arrow_config.xml
 index 3f96907a..b7626b5d 100644
@@ -40,7 +40,7 @@ index 3f96907a..b7626b5d 100644
      <!-- Udfps vendor code -->
      <integer name="config_udfps_vendor_code">0</integer>
 diff --git a/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsView.java b/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsView.java
-index ac391f63..838bf760 100644
+index b5174e80..636c1f47 100644
 --- a/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsView.java
 +++ b/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsView.java
 @@ -41,6 +41,12 @@ import com.android.systemui.R;
@@ -106,35 +106,17 @@ index ac391f63..838bf760 100644
      public UdfpsView(Context context, AttributeSet attrs) {
          super(context, attrs);
  
-@@ -240,7 +289,7 @@ public class UdfpsView extends FrameLayout implements DozeReceiver, UdfpsIllumin
-         if (mGhbmView != null && surface == null) {
-             Log.e(TAG, "doIlluminate | surface must be non-null for GHBM");
+@@ -253,6 +302,10 @@ public class UdfpsView extends FrameLayout implements DozeReceiver, UdfpsIllumin
+                     Log.w(TAG, "doIlluminate | onIlluminatedRunnable is null");
+                 }
+             });
++        } else {
++               if (mGhbmView != null) {
++                       mGhbmView.drawIlluminationDot(mSensorRect);
++               }
          }
--        mHbmProvider.enableHbm(mHbmType, surface, () -> {
-+        if(mHbmProvider != null) mHbmProvider.enableHbm(mHbmType, surface, () -> {
-             if (mGhbmView != null) {
-                 mGhbmView.drawIlluminationDot(mSensorRect);
-             }
-@@ -252,6 +301,11 @@ public class UdfpsView extends FrameLayout implements DozeReceiver, UdfpsIllumin
-                 Log.w(TAG, "doIlluminate | onIlluminatedRunnable is null");
-             }
-         });
-+	else {
-+		if (mGhbmView != null) {
-+			mGhbmView.drawIlluminationDot(mSensorRect);
-+		}
-+	}
      }
  
-     @Override
-@@ -264,6 +318,6 @@ public class UdfpsView extends FrameLayout implements DozeReceiver, UdfpsIllumin
-             mGhbmView.setGhbmIlluminationListener(null);
-             mGhbmView.setVisibility(View.INVISIBLE);
-         }
--        mHbmProvider.disableHbm(null /* onHbmDisabled */);
-+        if(mHbmProvider != null) mHbmProvider.disableHbm(null /* onHbmDisabled */);
-     }
- }
 diff --git a/services/core/Android.bp b/services/core/Android.bp
 index 55b982b4..5af7770f 100644
 --- a/services/core/Android.bp

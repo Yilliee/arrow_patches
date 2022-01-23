@@ -1,4 +1,4 @@
-From d065928f7a1e1322d8d9c2377235b15c91c71b0d Mon Sep 17 00:00:00 2001
+From 0d2389582581acbdd55dc3595e0db021aff84fdb Mon Sep 17 00:00:00 2001
 From: Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
 Date: Sun, 27 Jun 2021 05:21:38 +0000
 Subject: [PATCH 2/3] Only use meizu-vibrator on Meizu 18
@@ -76,7 +76,7 @@ index 0000000..b34a10b
 +<manifest version="1.0" type="framework">
 +</manifest>
 diff --git a/rw-system.sh b/rw-system.sh
-index ee4df70..3ed1cdd 100644
+index af2c51a..609cbec 100644
 --- a/rw-system.sh
 +++ b/rw-system.sh
 @@ -356,6 +356,12 @@ if [ "$foundFingerprint" = false ];then

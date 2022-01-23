@@ -1,4 +1,4 @@
-From 2b85885e8a1dcb62294adee6057d37aec3778d9a Mon Sep 17 00:00:00 2001
+From 2cd8c918a35a7c9466e12ab75a0612ef999fc983 Mon Sep 17 00:00:00 2001
 From: Peter Cai <peter@typeblog.net>
 Date: Wed, 16 Dec 2020 21:26:45 +0800
 Subject: [PATCH 17/26] TelephonyManager: add API annotations for
