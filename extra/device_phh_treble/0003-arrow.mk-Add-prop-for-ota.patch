@@ -1,0 +1,23 @@
+From b980f475d504b106b380f857b21cc43075d0cf61 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Yilli=C3=A9?= <yilliee@protonmail.com>
+Date: Fri, 18 Feb 2022 16:18:08 +0500
+Subject: [PATCH 3/3] arrow.mk : Add prop for ota
+
+---
+ arrow.mk | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/arrow.mk b/arrow.mk
+index 1c2aadd..3093f17 100644
+--- a/arrow.mk
++++ b/arrow.mk
+@@ -9,3 +9,6 @@ TARGET_USES_PREBUILT_VENDOR_SEPOLICY := true
+ TARGET_HAS_FUSEBLK_SEPOLICY_ON_VENDOR := true
+ 
+ TARGET_FACE_UNLOCK_SUPPORTED := true
++
++PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
++       ro.system.ota.json_url=https://raw.githubusercontent.com/Yilliee/arrow_patches/arrow-12.0/ota/ota.json
+-- 
+2.35.1
+

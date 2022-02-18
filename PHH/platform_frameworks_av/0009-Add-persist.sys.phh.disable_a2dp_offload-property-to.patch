@@ -1,7 +1,7 @@
-From 561c837ba082ed0a5e92f855dfb6e12e1675d173 Mon Sep 17 00:00:00 2001
+From 231d0618895523c6baafdec44a87eab08af9a8d5 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Mon, 25 May 2020 21:26:54 +0200
-Subject: [PATCH 09/18] Add persist.sys.phh.disable_a2dp_offload property to
+Subject: [PATCH 09/19] Add persist.sys.phh.disable_a2dp_offload property to
  force a2dp offload
 
 Change-Id: Id474540c33c594cc4010a1a398d82bff8aadaeea
@@ -322,5 +322,5 @@ index c73c17d..314de78 100644
          { "STRATEGY_CALL_ASSISTANT", STRATEGY_CALL_ASSISTANT },
      };
 -- 
-2.34.1
+2.35.1
 

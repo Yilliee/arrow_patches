@@ -1,7 +1,7 @@
-From db9351a4f9f71e61a93d6c4832aba522ec14d6e8 Mon Sep 17 00:00:00 2001
+From 07b21f6fad81fab9d2b6b5d5ea729702cd9e32ef Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Mon, 5 Aug 2019 18:09:50 +0200
-Subject: [PATCH 01/18] Fix BT in-call on CAF devices
+Subject: [PATCH 01/19] Fix BT in-call on CAF devices
 
 See https://github.com/phhusson/treble_experimentations/issues/374
 
@@ -127,5 +127,5 @@ index 84ed656..9a857ff 100644
  
      for (const xmlNode *children = cur->xmlChildrenNode; children != NULL;
 -- 
-2.34.1
+2.35.1
 

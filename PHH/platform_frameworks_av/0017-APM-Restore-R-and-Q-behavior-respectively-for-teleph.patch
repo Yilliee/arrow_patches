@@ -1,7 +1,7 @@
-From 7d5b6b4f842f8e890853a789b1fb4bd9ddb7f890 Mon Sep 17 00:00:00 2001
+From 91063ca25a4de24c2544197faceffb83894b629e Mon Sep 17 00:00:00 2001
 From: Peter Cai <peter@typeblog.net>
 Date: Tue, 19 Oct 2021 21:16:55 -0400
-Subject: [PATCH 17/18] APM: Restore R and Q behavior respectively for
+Subject: [PATCH 17/19] APM: Restore R and Q behavior respectively for
  telephony audio
 
 This conditionally reverts part of 51c9cc (S) and afd4ce (R) when the
@@ -102,5 +102,5 @@ index 98f96d1..e8b1909 100644
          HwAudioOutputCollection mHwOutputs;
          SourceClientCollection mAudioSources;
 -- 
-2.34.1
+2.35.1
 

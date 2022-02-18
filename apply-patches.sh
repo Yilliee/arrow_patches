@@ -44,7 +44,7 @@ done
 #platform_frameworks_av
 DISPLAY_MSG=1
 cp -r ${PHH}/platform_frameworks_av ${SOURCE_DIR}/frameworks/av/phh && cd ${SOURCE_DIR}/frameworks/av
-for i in {0001..0018}
+for i in {0001..0019}
 do apply_patches frameworks/av phh $i
 done
 
@@ -65,7 +65,7 @@ done
 #platform_frameworks_opt_telephony
 DISPLAY_MSG=1
 cp -r ${PHH}/platform_frameworks_opt_telephony ${SOURCE_DIR}/frameworks/opt/telephony/phh && cd ${SOURCE_DIR}/frameworks/opt/telephony
-for i in {0001..0003}
+for i in {0001..0004}
 do apply_patches frameworks/opt/telephony phh $i
 done
 
@@ -218,7 +218,7 @@ done
 #device_phh_treble
 DISPLAY_MSG=1
 cp -r ${extra}/device_phh_treble ${SOURCE_DIR}/device/phh/treble/extra && cd ${SOURCE_DIR}/device/phh/treble
-for i in {0001..0002}
+for i in {0001..0003}
 do apply_patches device/phh/treble extra $i
 done
 
