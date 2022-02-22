@@ -1,0 +1,46 @@
+{
+  "version": "v402",
+  "date": "1645438135",
+  "variants": [
+    {
+      "name": "treble_arm64_bvN",
+      "size": "742019160",
+      "url": "https://sourceforge.net/projects/gsi-projects/files/v402/ArrowOS-12/ArrowOS-12-arm64_ab-bvN-Unofficial.img.xz"
+    },
+    {
+      "name": "treble_arm64_bvN-vndklite",
+      "size": "711923720",
+      "url": "https://sourceforge.net/projects/gsi-projects/files/v402/ArrowOS-12/ArrowOS-12-arm64_ab-bvN-vndklite-Unofficial.img.xz"
+   },
+   {
+      "name": "treble_arm64_bgN"
+      "size": "1075889672"
+      "url": "https://sourceforge.net/projects/gsi-projects/files/v402/ArrowOS-12/ArrowOS-12-arm64_ab-bgN-Unofficial.img.xz"
+   },
+   {
+      "name": "treble_arm64_bgN-vndklite",
+      "size": "1032340060",
+      "url": "https://sourceforge.net/projects/gsi-projects/files/v402/ArrowOS-12/ArrowOS-12-arm64_ab-bgN-vndklite-Unofficial.img.xz"
+   },
+   {
+      "name": "treble_a64_bvN",
+      "size": "574196508",
+      "url": "https://sourceforge.net/projects/gsi-projects/files/v402/ArrowOS-12/ArrowOS-12-a64-bvN-Unofficial.img.xz"
+   },
+   {
+      "name": "treble_a64_bvN-vndklite",
+      "size": "555511964",
+      "url": "https://sourceforge.net/projects/gsi-projects/files/v402/ArrowOS-12/ArrowOS-12-a64-bvN-vndklite-Unofficial.img.xz"
+   },
+   {
+      "name": "treble_a64_bgN",
+      "size": "894734648",
+      "url": "https://sourceforge.net/projects/gsi-projects/files/v402/ArrowOS-12/ArrowOS-12-a64_ab-bgN-Unofficial.img.xz"
+   },
+   {
+      "name": "treble_a64_bgN-vndklite",
+      "size": "861573620",
+      "url": "https://sourceforge.net/projects/gsi-projects/files/v402/ArrowOS-12/ArrowOS-12-arm64_ab-bvN-vndklite-Unofficial.img.xz"
+   }
+  ]
+}
